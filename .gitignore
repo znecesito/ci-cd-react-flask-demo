@@ -1,0 +1,15 @@
+# .gitignore
+
+# Node & Python
+node_modules/
+__pycache__/
+*.pyc
+
+# Build & Logs
+dist/
+frontend/dist/
+*.log
+
+# Env files
+.env
+
