@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+import os
 
 app = Flask(__name__)
 
@@ -7,5 +8,5 @@ def hello():
     return jsonify({"message": "Hello from Flask!"})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)  # Port 10000 is a common Render default
-
+    port = int(os.environ.get("PORT", 5000))  # default to 5000 for local dev
+    app.run(host="0.0.0.0", port=port)
