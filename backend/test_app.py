@@ -13,5 +13,11 @@ class BasicTestCase(unittest.TestCase):
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.get_json(), {"status": "All systems operational."})
 
+    def test_health(self):
+        with app.test_client() as client:
+            response = client.get("/api/health")
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.get_json(), {"health": "Healthy as a horse 🐎"})
+
 if __name__ == '__main__':
     unittest.main()

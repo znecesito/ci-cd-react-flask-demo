@@ -13,6 +13,10 @@ def hello():
 def status():
     return jsonify({"status": "All systems operational."})
 
+@app.route("/api/health")
+def health():
+    return jsonify({"health": "Healthy as a horse 🐎"})
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
