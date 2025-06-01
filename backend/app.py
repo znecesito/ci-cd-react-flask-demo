@@ -7,7 +7,7 @@ CORS(app)  # Enable CORS for all domains
 
 @app.route("/api")
 def hello():
-    return jsonify({"message": "Hello Zack! F you! 2"})
+    return jsonify({"message": "Hello Zack! F you! restart service"})
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
